@@ -1,90 +1,60 @@
 const inquirer = require('inquirer')
 const fs = require('fs')
+const generatePortfolio = require('./html-content')
 
 inquirer.prompt([
     {
         type: 'input',
-        message: 'What is your name? (First and last)',
+        message: 'What is your name? (First and last)\n',
         name: 'name'
     },
     {
         type: 'input',
-        message: 'Location:',
+        message: 'Location:\n',
         name: 'location'
     },
     {
         type: 'input',
-        message: 'Write a nice biography:',
+        message: 'Write a nice biography:\n',
         name: 'bio'
     },
     {
         type: 'input',
-        message: 'What is your favourite hobby? Write a brief summary why you like it so much.',
+        message: 'What is your favourite hobby? Write a brief summary why you like it so much.\n',
         name: 'hobby'
     },
     {
         type: 'input',
-        message: 'What is your GitHub username?',
+        message: 'What is your GitHub username?\n',
         name: 'github'
     },
     {
         type: 'input',
-        message: 'What is your LinkedIn URL?',
+        message: 'What is your LinkedIn URL?\n',
         name: 'linkedin'
     },
     {
         type: 'input',
-        message: 'What is your email?',
+        message: 'What is your email?\n',
         name: 'email'
     },
 ])
+.then(data => {
+    const htmlContent = generatePortfolio(data)
+    writeToFile('index.html', htmlContent)
+})
+.catch(err => {
+    console.error('Oops! An error occurred:', err)
+})
+
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, error => {
+      if (error) {
+        throw error
+      } else {
+        console.log("Your portfolio was generated successfully! Check your folder.")
+      }
+    });
+  }
  
-const htmlContent = `<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Your Portfolio</title>
-    <link rel="stylesheet" href="assets/reset.css">
-    <link rel="stylesheet" href="assets/style.css">
-</head>
-<body>
-    <header>
-        <h1>Your Name</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="about">
-        <h2>About</h2>
-        <p>
-            Name: Your Name<br>
-            Location: Your Location<br>
-            Bio: Write a brief description about yourself and your skills here.
-        </p>
-        <p>
-            My favourite hobby:
-            
-        </p>
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>You can reach me at email@example.com or through the following social media profiles:</p>
-        <ul>
-            <li><a href="https://linkedin.com/your-profile">LinkedIn</a></li>
-            <li><a href="https://github.com/your-profile">GitHub</a></li>
-            <!-- Add more social media profiles as needed -->
-        </ul>
-    </section>
-
-    <footer>
-        <p>&copy; 2023 Your Name. All rights reserved.</p>
-    </footer>
-</body>
-</html>
-`
 
