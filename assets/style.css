@@ -3,7 +3,7 @@
 }
 
 a {
-    color: orange;
+    color: #947294;
 }
 
 header {
@@ -13,7 +13,28 @@ header {
 }
 
 body {
-    background-color: rgb(154, 200, 200);
+    margin: 1%;
+    padding-bottom: 35vh;
+    border: dashed rgb(106, 138, 138) 5px;
+    background-color: #b4dbdb;
+}
+
+header {
+    display: flex;
+    border: ridge rgb(106, 138, 138) 5px;
+    padding: 1%;
+    background-color: beige;
+}
+
+header h1 {
+    font-size: 60px;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    font-size: 30px;
+    gap: 100px;
 }
 
 #about {
