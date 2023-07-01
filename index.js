@@ -1,11 +1,15 @@
 const inquirer = require('inquirer')
 const fs = require('fs')
+const chalk = require('chalk')
+const chalkMsg = chalk.bold.magenta.bgYellowBright
+const chalkPrefix = chalk.green
+const chalkWarn = chalk.bold.bgRed
 const generatePortfolio = require('./html-content')
 
 inquirer.prompt([
     {
         type: 'input',
-        message: 'What is your name? (First and last)\n',
+        message: chalkMsg('What is your name? (First and last)\n'),
         name: 'name'
     },
     {
@@ -15,27 +19,34 @@ inquirer.prompt([
     },
     {
         type: 'input',
-        message: 'Write a nice biography:\n',
+        message: chalkMsg('Write a nice biography:\n'),
         name: 'bio'
     },
     {
         type: 'input',
-        message: 'What is your favourite hobby? Write a brief summary why you like it so much.\n',
+        message: chalkMsg('What is your favourite hobby? Write a brief summary why you like it so much.\n'),
         name: 'hobby'
     },
     {
         type: 'input',
-        message: 'What is your GitHub username?\n',
+        prefix: chalkWarn('\n-> No URL photo? Just press "Enter" to skip.') + chalkPrefix('\n\n?'),
+        message: chalkMsg('Upload a photo of yourself by providing the URL!\n'),
+        name: 'img'
+    },
+    
+    {
+        type: 'input',
+        message: chalkMsg('What is your GitHub username?\n'),
         name: 'github'
     },
     {
         type: 'input',
-        message: 'What is your LinkedIn URL?\n',
+        message: chalkMsg('What is your LinkedIn URL?\n'),
         name: 'linkedin'
     },
     {
         type: 'input',
-        message: 'What is your email?\n',
+        message: chalkMsg('What is your email?\n'),
         name: 'email'
     },
 ])

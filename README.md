@@ -1,29 +1,19 @@
-# Module 09 Mini-Project: Portfolio Generator
+# Portfolio HTML generator
 
-In this activity, you will build a command-line tool that generates an HTML portfolio page from user input.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Instructions
+# Description
+This is a simple portfolio generator created using node, the user goes through a series of prompts to create a personalized portfolio that populates the page with the users inputs.
 
-* Your application should prompt the user for information like their name, location, bio, LinkedIn URL, and GitHub URL. Feel free to add any additional prompts you think of.
+# Screenshots
+![preview](assets\images\preview.png)
+![preview](assets\images\preview2.png)
 
-* An HTML document containing the information collected from the prompts should be constructed and written to the file system. Make sure to add some CSS styling to the document.
+# Usage
+To use the Portfolio generator, run this command:
 
-* You’ll need the following tools and technologies to accomplish this:
+    npm index.js
 
-  * `fs` for writing to the file system
+# Credits
 
-  * `inquirer` version 8.2.4 for collecting user input
-
-  * String template literals for generating a string version of the HTML document before it is written to the file system
-
-## 💡 Hints
-
-It might be a good idea to start building out the HTML skeleton in a real HTML file. Once you're happy with the HTML file's appearance in the browser, you can copy and paste its contents into a string template literal. Then you can write a function to insert the user input into the appropriate places in the HTML string before writing it to the file system.
-
-## 🏆 Bonus
-
-* Instead of using callback functions, what are some other tools in JavaScript we can use to handle asynchronous functionality?
-
----
-
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+This project was created by Jacob Lowther.

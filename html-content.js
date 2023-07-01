@@ -1,7 +1,7 @@
 function renderImage(img) {
     return img === ''
     ? '' : `<div id="img">
-    <img src="${data.img}" alt="photo of ${data.name}">
+    <img src="${img}" alt="photo of me">
     </div>`
 }
 
@@ -39,9 +39,7 @@ return `<!DOCTYPE html>
         </p>
     </section>
 
-    <div id="img">
-    <img src="${data.img}" alt="photo of ${data.name}">
-    </div>
+    ${renderImage(data.img)}
 
     <section id="contact">
         <h2>Contact</h2>
