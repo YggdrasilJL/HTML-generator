@@ -14,6 +14,9 @@ To use the Portfolio generator, run this command:
 
     npm index.js
 
+- Go through the series of prompts and put in what you want your portfolio's content to be.
+- Look at your saved HTML file and edit what you want.
+
 # Credits
 
 This project was created by Jacob Lowther.
