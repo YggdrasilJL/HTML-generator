@@ -6,8 +6,8 @@
 This is a simple portfolio generator created using node, the user goes through a series of prompts to create a personalized portfolio that populates the page with the users inputs.
 
 # Screenshots
-![preview](assets\images\preview.png)
-![preview](assets\images\preview2.png)
+![preview](assets/images/preview.png)
+![preview](assets/images/preview2.png)
 
 # Usage
 To use the Portfolio generator, run this command:
